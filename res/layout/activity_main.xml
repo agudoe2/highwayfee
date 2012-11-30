@@ -1,0 +1,561 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <RelativeLayout
+        android:id="@+id/RL_orifee"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:background="#FFE0E0E0" >
+
+        <TextView
+            android:id="@+id/TV_now"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:text="目前費用："
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        <TextView
+            android:id="@+id/TV_sta1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:text="$120"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        <Button
+            android:id="@+id/Bt_sta1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/TV_now"
+            android:text="收費站$40" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/RL_2seg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@id/RL_orifee"
+        android:background="#FFB0B0B0" >
+
+        <Button
+            android:id="@+id/Bt_sta2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:text="方案一：無免費里程" />
+
+        <TextView
+            android:id="@+id/TV_sta2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:text="$120 (貴$120)"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/RL_3seg1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@id/RL_2seg"
+        android:background="#FFD0D0D0" >
+
+        <Button
+            android:id="@+id/Bt_sta3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:text="方案二：每天免費10公里" />
+
+        <TextView
+            android:id="@+id/TV_sta3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:text="$120 (貴$120)"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/RL_3seg2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="false"
+        android:layout_below="@id/RL_3seg1"
+        android:background="#FFB0B0B0" >
+
+        <Button
+            android:id="@+id/Bt_sta4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:text="方案三：每天免費20公里" />
+
+        <TextView
+            android:id="@+id/TV_sta4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:text="$120 (貴$120)"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/RL_3seg2"
+        android:paddingTop="10dp"
+        android:text="行經路段："
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
+        android:id="@+id/TV_cnt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/textView2"
+        android:layout_alignBottom="@+id/textView2"
+        android:layout_toRightOf="@+id/textView2"
+        android:text="共100公里，經"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <Button
+            android:id="@+id/Bt_stations"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_alignBottom="@+id/textView2"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/TV_cnt"
+            android:text="10收費站" />
+
+    <ScrollView
+        android:id="@+id/scrollView1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@id/Bt_stations" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent" >
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content" >
+
+                    <TextView
+                        android:id="@+id/TV_no0"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+            		android:layout_alignParentLeft="true"
+            		android:layout_centerVertical="true"
+                        android:text="1"
+                        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+                    <Spinner
+                        android:id="@+id/Sp_highway0"
+                        style="android:buttonStyle"
+                        android:layout_width="60dp"
+                        android:layout_height="wrap_content"
+                        android:background="@android:drawable/btn_default"
+                        android:paddingBottom="3dp"
+                        android:paddingTop="0dp" />
+
+                    <TextView
+                        android:id="@+id/TV_c0"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=":"
+                        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+                    <Spinner
+                        android:id="@+id/Sp_from0"
+                        style="android:buttonStyle"
+                        android:layout_width="95dp"
+                        android:layout_height="wrap_content"
+                        android:background="@android:drawable/btn_default"
+                        android:paddingBottom="3dp"
+                        android:paddingTop="0dp" />
+
+                    <TextView
+                        android:id="@+id/TV_a0"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="→"
+                        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+                    <Spinner
+                        android:id="@+id/Sp_to0"
+                        style="android:buttonStyle"
+                        android:layout_width="95dp"
+                        android:layout_height="wrap_content"
+                        android:background="@android:drawable/btn_default"
+                        android:paddingBottom="3dp"
+                        android:paddingTop="0dp" />
+
+                    <Spinner
+                        android:id="@+id/Sp_mul0"
+                        style="android:buttonStyle"
+                        android:layout_width="40dp"
+                        android:layout_height="wrap_content"
+                        android:background="@android:drawable/btn_default"
+                        android:paddingBottom="3dp"
+                        android:paddingTop="0dp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content" >
+
+                    <TextView
+                        android:id="@+id/TV_no1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+            		android:layout_alignParentLeft="true"
+            		android:layout_centerVertical="true"
+                        android:text="2"
+                        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+                    <Spinner
+                        android:id="@+id/Sp_highway1"
+                        style="android:buttonStyle"
+                        android:layout_width="60dp"
+                        android:layout_height="wrap_content"
+                        android:background="@android:drawable/btn_default"
+                        android:paddingBottom="3dp"
+                        android:paddingTop="0dp" />
+
+                    <TextView
+                        android:id="@+id/TV_c1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=":"
+                        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+                    <Spinner
+                        android:id="@+id/Sp_from1"
+                        style="android:buttonStyle"
+                        android:layout_width="95dp"
+                        android:layout_height="wrap_content"
+                        android:background="@android:drawable/btn_default"
+                        android:paddingBottom="3dp"
+                        android:paddingTop="0dp" />
+
+                    <TextView
+                        android:id="@+id/TV_a1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="→"
+                        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+                    <Spinner
+                        android:id="@+id/Sp_to1"
+                        style="android:buttonStyle"
+                        android:layout_width="95dp"
+                        android:layout_height="wrap_content"
+                        android:background="@android:drawable/btn_default"
+                        android:paddingBottom="3dp"
+                        android:paddingTop="0dp" />
+
+                    <Spinner
+                        android:id="@+id/Sp_mul1"
+                        style="android:buttonStyle"
+                        android:layout_width="40dp"
+                        android:layout_height="wrap_content"
+                        android:background="@android:drawable/btn_default"
+                        android:paddingBottom="3dp"
+                        android:paddingTop="0dp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content" >
+
+                    <TextView
+                        android:id="@+id/TV_no2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+            		android:layout_alignParentLeft="true"
+            		android:layout_centerVertical="true"
+                        android:text="3"
+                        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+                    <Spinner
+                        android:id="@+id/Sp_highway2"
+                        style="android:buttonStyle"
+                        android:layout_width="60dp"
+                        android:layout_height="wrap_content"
+                        android:background="@android:drawable/btn_default"
+                        android:paddingBottom="3dp"
+                        android:paddingTop="0dp" />
+
+                    <TextView
+                        android:id="@+id/TV_c2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=":"
+                        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+                    <Spinner
+                        android:id="@+id/Sp_from2"
+                        style="android:buttonStyle"
+                        android:layout_width="95dp"
+                        android:layout_height="wrap_content"
+                        android:background="@android:drawable/btn_default"
+                        android:paddingBottom="3dp"
+                        android:paddingTop="0dp" />
+
+                    <TextView
+                        android:id="@+id/TV_a2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="→"
+                        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+                    <Spinner
+                        android:id="@+id/Sp_to2"
+                        style="android:buttonStyle"
+                        android:layout_width="95dp"
+                        android:layout_height="wrap_content"
+                        android:background="@android:drawable/btn_default"
+                        android:paddingBottom="3dp"
+                        android:paddingTop="0dp" />
+
+                    <Spinner
+                        android:id="@+id/Sp_mul2"
+                        style="android:buttonStyle"
+                        android:layout_width="40dp"
+                        android:layout_height="wrap_content"
+                        android:background="@android:drawable/btn_default"
+                        android:paddingBottom="3dp"
+                        android:paddingTop="0dp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content" >
+
+                    <TextView
+                        android:id="@+id/TV_no3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+            		android:layout_alignParentLeft="true"
+            		android:layout_centerVertical="true"
+                        android:text="4"
+                        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+                    <Spinner
+                        android:id="@+id/Sp_highway3"
+                        style="android:buttonStyle"
+                        android:layout_width="60dp"
+                        android:layout_height="wrap_content"
+                        android:background="@android:drawable/btn_default"
+                        android:paddingBottom="3dp"
+                        android:paddingTop="0dp" />
+
+                    <TextView
+                        android:id="@+id/TV_c3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=":"
+                        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+                    <Spinner
+                        android:id="@+id/Sp_from3"
+                        style="android:buttonStyle"
+                        android:layout_width="95dp"
+                        android:layout_height="wrap_content"
+                        android:background="@android:drawable/btn_default"
+                        android:paddingBottom="3dp"
+                        android:paddingTop="0dp" />
+
+                    <TextView
+                        android:id="@+id/TV_a3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="→"
+                        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+                    <Spinner
+                        android:id="@+id/Sp_to3"
+                        style="android:buttonStyle"
+                        android:layout_width="95dp"
+                        android:layout_height="wrap_content"
+                        android:background="@android:drawable/btn_default"
+                        android:paddingBottom="3dp"
+                        android:paddingTop="0dp" />
+
+                    <Spinner
+                        android:id="@+id/Sp_mul3"
+                        style="android:buttonStyle"
+                        android:layout_width="40dp"
+                        android:layout_height="wrap_content"
+                        android:background="@android:drawable/btn_default"
+                        android:paddingBottom="3dp"
+                        android:paddingTop="0dp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content" >
+
+                    <TextView
+                        android:id="@+id/TV_no4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+            		android:layout_alignParentLeft="true"
+            		android:layout_centerVertical="true"
+                        android:text="5"
+                        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+                    <Spinner
+                        android:id="@+id/Sp_highway4"
+                        style="android:buttonStyle"
+                        android:layout_width="60dp"
+                        android:layout_height="wrap_content"
+                        android:background="@android:drawable/btn_default"
+                        android:paddingBottom="3dp"
+                        android:paddingTop="0dp" />
+
+                    <TextView
+                        android:id="@+id/TV_c4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=":"
+                        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+                    <Spinner
+                        android:id="@+id/Sp_from4"
+                        style="android:buttonStyle"
+                        android:layout_width="95dp"
+                        android:layout_height="wrap_content"
+                        android:background="@android:drawable/btn_default"
+                        android:paddingBottom="3dp"
+                        android:paddingTop="0dp" />
+
+                    <TextView
+                        android:id="@+id/TV_a4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="→"
+                        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+                    <Spinner
+                        android:id="@+id/Sp_to4"
+                        style="android:buttonStyle"
+                        android:layout_width="95dp"
+                        android:layout_height="wrap_content"
+                        android:background="@android:drawable/btn_default"
+                        android:paddingBottom="3dp"
+                        android:paddingTop="0dp" />
+
+                    <Spinner
+                        android:id="@+id/Sp_mul4"
+                        style="android:buttonStyle"
+                        android:layout_width="40dp"
+                        android:layout_height="wrap_content"
+                        android:background="@android:drawable/btn_default"
+                        android:paddingBottom="3dp"
+                        android:paddingTop="0dp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content" >
+
+                    <TextView
+                        android:id="@+id/TV_no5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+            		android:layout_alignParentLeft="true"
+            		android:layout_centerVertical="true"
+                        android:text="6"
+                        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+                    <Spinner
+                        android:id="@+id/Sp_highway5"
+                        style="android:buttonStyle"
+                        android:layout_width="60dp"
+                        android:layout_height="wrap_content"
+                        android:background="@android:drawable/btn_default"
+                        android:paddingBottom="3dp"
+                        android:paddingTop="0dp" />
+
+                    <TextView
+                        android:id="@+id/TV_c5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=":"
+                        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+                    <Spinner
+                        android:id="@+id/Sp_from5"
+                        style="android:buttonStyle"
+                        android:layout_width="95dp"
+                        android:layout_height="wrap_content"
+                        android:background="@android:drawable/btn_default"
+                        android:paddingBottom="3dp"
+                        android:paddingTop="0dp" />
+
+                    <TextView
+                        android:id="@+id/TV_a5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="→"
+                        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+                    <Spinner
+                        android:id="@+id/Sp_to5"
+                        style="android:buttonStyle"
+                        android:layout_width="95dp"
+                        android:layout_height="wrap_content"
+                        android:background="@android:drawable/btn_default"
+                        android:paddingBottom="3dp"
+                        android:paddingTop="0dp" />
+
+                    <Spinner
+                        android:id="@+id/Sp_mul5"
+                        style="android:buttonStyle"
+                        android:layout_width="40dp"
+                        android:layout_height="wrap_content"
+                        android:background="@android:drawable/btn_default"
+                        android:paddingBottom="3dp"
+                        android:paddingTop="0dp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>

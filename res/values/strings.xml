@@ -1,0 +1,8 @@
+<resources>
+
+    <string name="app_name">高速公路里程計費試算</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="menu_settings">Settings</string>
+    <string name="title_activity_main">高速公路里程計費試算</string>
+    <!-- string name="change">改成6個，改最新版，新增倍率，修正頭城交流道位置，記憶常用交流</string-->
+</resources>
